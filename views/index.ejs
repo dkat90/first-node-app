@@ -1,0 +1,35 @@
+!<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Bear Shop</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+  </head>
+  <body>
+    <h1>Bear lodge</h1>
+    <% for(var i=0; i<bears.length; i++){%>
+      <ol>
+        <li>Name: <%= bears[i].name %></li>
+          <ul>
+            <li>Species: <%= bears[i].species %></li>
+          </ul>
+      </ol>
+    <%}%>
+
+
+    <h2>To create a bear!</h2>
+    <fieldset>
+      <form method="POST" action="/bears">
+        <div class="naming-field">
+          <input name="name" class="form-control" placeholder="Name"/>
+        </div>
+        <div class="species-field">
+          <input name="species"  class="form-control" placeholder="Species"/>
+        </div>
+    	  <div class="confirm-the-save">
+    	    <input class="button" type="submit" value="Submit">
+    	  </div>
+      </form>
+    </fieldset>
+  </body>
+</html>
